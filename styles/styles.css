@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --primary-color: #03346e;
+    --secondary-color: #EEEEEE;
+    --background-color: #7FA1C3;
+    --text-color: #03346e;
+    --highlight-color: #E2DAD6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Asegura que el body ocupe el 100% de la altura de la pantalla */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+header img {
+    max-width: 150px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Permite que el main ocupe el espacio disponible */
+    padding: 20px;
+    position: relative; /* Permite posicionar los elementos en la parte inferior de la página */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos al inicio y al final del contenedor */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    flex: 1; /* Ocupa todo el espacio disponible dentro de main */
+    margin-bottom: 80px; /* Espacio para los botones en la parte inferior */
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 240px); /* Deja un margen de 240px desde la izquierda */
+    max-width: 600px; /* Ancho máximo del contenedor de entrada */
+    margin-right: 240px; /* Deja un margen a la derecha igual al espacio de la izquierda */
+    position: relative;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: 2px solid var(--primary-color); /* Agrega un borde para mayor visibilidad */
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+}
+
+.button-container {
+    display: flex;
+    gap: 24px; /* Espacio de 24px entre los botones */
+    position: fixed;
+    bottom: 20px; /* Ubica los botones en la parte inferior de la página */
+    left: 240px; /* Deja un margen desde la izquierda igual al área de texto */
+    right: 20px; /* Margen desde el borde derecho */
+    justify-content: center; /* Centra los botones horizontalmente */
+}
+
+#btnEncriptar, #btnDesencriptar, #btnCopiar {
+    width: 328px; /* Ancho fijo para los botones */
+    padding: 10px 20px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btnEncriptar {
+    background-color: var(--primary-color);
+    color: beige;
+    border-color: var(--primary-color);
+}
+
+#btnEncriptar:hover {
+    background-color: #021f45; /* Color más oscuro para hover */
+}
+
+#btnDesencriptar {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#btnDesencriptar:hover {
+    background-color: #dcdcdc; /* Color más oscuro para hover */
+}
+
+#btnCopiar {
+    display: none; /* Inicialmente oculto */
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+#btnCopiar:hover {
+    background-color: #dcdcdc; /* Color más oscuro para hover */
+}
+
+.output-section {
+    width: 50%; /* Asegura que ocupe la mitad del contenedor principal */
+    max-width: 600px; /* Ancho máximo para la sección de salida */
+    background-color: var(--highlight-color);
+    padding: 20px;
+    border-radius: 32px;
+    position: absolute;
+    right: 20px; /* Margen desde el borde derecho */
+    top: 20px; /* Margen desde el borde superior */
+}
+
+#mensaje-inicial {
+    text-align: center;
+    color: var(--text-color);
+}
+
+#textoSalida {
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    margin-bottom: 10px;
+}
